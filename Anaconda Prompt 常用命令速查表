@@ -72,3 +72,40 @@ BASH
 conda install numpy -y
 
 在环境间快速切换时，可以用 上下方向键 找历史命令，减少输入。
+
+----------------------------------------------------------------------------
+
+环境管理
+命令	                                         说明 (中文)	                                   用途 (English)
+conda create -n myenv python=3.10	     创建名为 myenv 的环境并指定 Python 版本	         Create new environment with Python 3.10
+conda env list / conda info --envs	   查看所有已创建环境	                               List all environments
+conda activate myenv	                 激活名为 myenv 的环境	                           Activate environment
+conda deactivate	                     退出当前环境	                                   Deactivate environment
+conda remove -n myenv --all	           删除整个 myenv 环境	                             Remove environment
+conda rename -n oldname newname	       重命名环境（需 conda ≥ 22.9）	                   Rename environment
+
+📦 包管理
+命令	                                        说明 (中文)	                                   用途 (English)
+conda install numpy pandas	           安装指定包	                                     Install package(s)
+conda install pandas=1.5.3	           安装指定版本包	                                 Install specific version
+conda update numpy	                   更新包到最新版本	                               Update package
+conda remove matplotlib	               卸载包	                                         Remove package
+conda list	                           查看环境中已安装的包	                             List installed packages
+conda search jupyter	                 查找可用版本	                                   Search for available versions
+conda update conda	                   更新 conda 本身	                                 Update conda
+
+📤 导出与分享
+命令	                                       说明 (中文)	                                     用途 (English)
+conda env export > environment.yml	   导出当前环境配置文件	                             Export environment to YAML
+conda env create -f environment.yml	   根据配置文件创建环境	                             Create environment from YAML
+conda env update -f environment.yml	   根据配置文件更新环境	                             Update environment from YAML
+conda list --export > requirements.txt 导出包列表（简化版）                              Export installed packages list
+
+⚙️ 其他常用
+命令	                                       说明 (中文)	                                     用途 (English)
+conda clean -a	                       清理缓存和未使用包，释放空间	                     Clean cache and unused packages
+conda config --show	                   查看当前 Conda 配置	                             Show conda config
+conda config --add channels conda-forge	添加 conda-forge 源	                           Add channel (conda-forge)
+✅ 使用技巧
+
+在命令后面加 -y 自动确认（不用手动按 y）：
