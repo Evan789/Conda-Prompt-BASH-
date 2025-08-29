@@ -1,0 +1,122 @@
+1. 什么是 Bash
+Bash 全称 Bourne Again SHell，是一种 Unix/Linux 系统中最常用的命令行解释器（Shell）。
+Shell 就好比是一层外壳（接口），让用户通过输入命令去和操作系统内核交互。
+Bash 是很多 Linux 发行版和 macOS 的默认 Shell，也可以在 Windows（通过 WSL 或 Git Bash）里使用。
+2. Bash 的位置
+操作系统大致结构可以这样理解：
+
+TEXT
+ ┌─────────────────┐
+ │  你（用户）      │ ← 键盘输入命令
+ ├─────────────────┤
+ │  Shell (Bash)   │ ← 解释并执行命令
+ ├─────────────────┤
+ │  内核 (Kernel)   │ ← 控制硬件、内存、进程
+ ├─────────────────┤
+ │  硬件 (CPU/磁盘等)│
+ └─────────────────┘
+👉 所以 Bash 就是“你 ↔ 操作系统”的翻译官。
+
+-------------------------------------------------------------------------------------------------
+
+20 个常见 Bash 指令
+📂 文件与目录操作
+pwd
+pwd
+→ 打印当前所在目录。
+
+ls
+ls -lh
+→ 查看当前目录内容（-l 详细列表，-h 人类可读大小）。
+
+cd
+cd /home/user/Documents
+→ 切换目录。
+
+mkdir
+mkdir myfolder
+→ 创建新目录。
+
+rmdir / rm -r
+rm -r myfolder
+→ 删除目录及内容。
+
+cp
+cp file.txt /backup/file.txt
+cp -r src/ dest/
+→ 复制文件或目录。
+
+mv
+mv oldname.txt newname.txt
+mv file.txt /other/folder/
+→ 移动/重命名文件。
+
+cat
+cat file.txt
+→ 查看文件内容。
+
+less
+less bigfile.log
+→ 分页查看大文件，支持上下翻页和搜索。
+
+touch
+touch newfile.txt
+→ 创建空文件或更新文件时间戳。
+
+🔎 搜索与查找
+find
+find . -name "*.txt"
+→ 在当前目录递归查找 .txt 文件。
+
+grep
+grep "error" logfile.log
+grep -r "main" src/
+→ 在文件或目录中搜索文本内容。
+
+🔧 权限与用户
+chmod
+chmod +x script.sh
+→ 修改权限，这里是给脚本加上可执行权限。
+
+chown
+sudo chown user:group file.txt
+→ 修改文件所有者。
+
+⚙️ 进程与系统
+ps
+ps aux | grep python
+→ 查看进程（配合 grep 查找）。
+
+top / htop
+top
+→ 查看系统资源（CPU、内存、进程）。
+
+kill
+kill -9 12345
+→ 杀掉进程（12345 是进程 PID）。
+
+📦 压缩与解压
+tar
+tar -czvf backup.tar.gz folder/
+tar -xzvf backup.tar.gz
+→ 压缩 (c=create) 或解压 (x=extract) tar 包。
+
+zip / unzip
+zip -r archive.zip folder/
+unzip archive.zip
+→ 打包成 zip 或解压 zip 文件。
+
+🌐 网络
+curl / wget
+curl https://example.com -o page.html
+wget https://example.com/file.zip
+→ 下载网页/文件，测试网络请求。
+
+✅ 总结
+目录管理：pwd, ls, cd, mkdir, rm, cp, mv
+文件查看：cat, less, touch
+搜索：find, grep
+权限：chmod, chown
+进程/系统：ps, top, kill
+压缩：tar, zip/unzip
+网络：curl, wget
