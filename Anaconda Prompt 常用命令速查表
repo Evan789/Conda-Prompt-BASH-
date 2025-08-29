@@ -1,0 +1,74 @@
+🎯 Anaconda Prompt 常用命令速查表
+📌 环境管理
+
+创建新环境
+conda create -n myenv python=3.10
+
+创建一个名为 myenv，Python 版本 3.10 的新环境。
+查看所有环境
+conda env list
+# 或
+conda info --envs
+
+激活环境
+conda activate myenv
+
+退出当前环境
+conda deactivate
+
+
+删除环境
+conda remove -n myenv --all
+
+📌 包管理
+
+安装包
+conda install numpy pandas
+在当前环境安装 numpy 和 pandas。
+
+安装指定版本
+conda install pandas=1.5.3
+
+更新包
+conda update scikit-learn
+
+删除包
+conda remove matplotlib
+
+查看当前环境的所有包
+conda list
+
+搜索可用包
+conda search jupyter
+
+📌 环境导出与迁移
+导出当前环境配置
+conda env export > environment.yml
+
+从配置文件创建环境
+conda env create -f environment.yml
+
+更新已有环境
+conda env update -f environment.yml
+
+📌 常见工具启动
+启动 Jupyter Notebook
+jupyter notebook
+
+启动 JupyterLab
+jupyter lab
+
+启动 Spyder IDE
+spyder
+
+⚡ 高效技巧
+命令简写：
+
+conda activate 可以简写为 activate（旧版）。
+conda remove → conda rm。
+
+用 -y 跳过所有确认：
+BASH
+conda install numpy -y
+
+在环境间快速切换时，可以用 上下方向键 找历史命令，减少输入。
